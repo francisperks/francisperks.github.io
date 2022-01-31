@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #e0e0e0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    height: 40em;
+}
+
+.welcome {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0);
+  height: 2em;
+  width: 7.5em;
+  margin: 0 auto;
+  border-radius: 50px;
+  position: relative;
+  /*animation-name: lift;
+  animation-duration: 5s;
+
+can put infinite
+  animation-iteration-count: 1;
+  animation-direction:normal;
+  animation-fill-mode: forwards;
+  background:  #e0e0e0;
+  box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;*/
+
+  animation: lift 5s cubic-bezier(0.25,0.1,0.25,1) forwards, float 2s linear 5s infinite alternate;
+}
+
+@keyframes lift {
+
+  0%{background: #e0e0e0;box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;}
+  10%{background: #e0e0e0;box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;}
+
+  20%{background: #e0e0e0;box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ebebeb;}
+
+  25%{background: #e0e0e0;box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;}
+
+  50%{width: 7.5em;}
+
+  75%{color: rgba(0, 0, 0, 0);background: #e0e0e0;box-shadow: 20px 20px 60px #a1a1a1, -20px -20px 60px #ffffff;}
+
+  90%{color: rgba(0, 0, 0, 1);height: 2em;width: 12em;background: #e0e0e0;box-shadow: 20px 20px 60px #a1a1a1, -20px -20px 60px #ffffff;}
+
+  100%{color: rgba(0, 0, 0, 1);width: 12em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
+ }
+
+@keyframes float {
+    0%{width:12em;height: 15em;background:#e0e0e0;box-shadow:15px 15px 60px #777777, -15px -15px 60px #ffffff;}
+    100%{width:12.2em;height: 15.2em;background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
+}
+
+
+
+
+}
