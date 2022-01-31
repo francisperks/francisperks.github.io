@@ -19,6 +19,12 @@ body {
     height: 40em;
 }
 
+.container{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .welcome {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
@@ -29,27 +35,25 @@ body {
   margin: 0 auto;
   border-radius: 50px;
   position: relative;
-  /*animation-name: lift;
-  animation-duration: 5s;
 
-can put infinite
-  animation-iteration-count: 1;
-  animation-direction:normal;
-  animation-fill-mode: forwards;
   background:  #e0e0e0;
-  box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;*/
-
-  animation: lift 5s cubic-bezier(0.25,0.1,0.25,1) forwards, float 2s linear 5s infinite alternate;
+  box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;;
+  animation: in 1s;
 }
+
+.welcome:hover{
+  animation:lift 2.5s cubic-bezier(0.25,0.1,0.25,1) forwards;
+}
+
 
 @keyframes lift {
 
-  0%{background: #e0e0e0;box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;}
-  10%{background: #e0e0e0;box-shadow: 0px 0px 0px #e0e0e0, 0px 0px 0px #ffffff;}
+  0%{background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
+  10%{background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
 
-  20%{background: #e0e0e0;box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ebebeb;}
+  20%{background: #e0e0e0;box-shadow: 20px 20px 60px #888888, -20px -20px 60px #ffffff;}
 
-  25%{background: #e0e0e0;box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;}
+  25%{background: #e0e0e0;box-shadow: 20px 20px 60px #aaaaaa, -20px -20px 60px #ffffff;}
 
   50%{width: 7.5em;}
 
@@ -60,9 +64,14 @@ can put infinite
   100%{color: rgba(0, 0, 0, 1);width: 12em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
  }
 
-@keyframes float {
-    0%{width:12em;height: 15em;background:#e0e0e0;box-shadow:15px 15px 60px #777777, -15px -15px 60px #ffffff;}
-    100%{width:12.2em;height: 15.2em;background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
+ @keyframes in{
+   from {color: rgba(0, 0, 0, 1);width: 12em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
+   to {background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
+ }
+
+@keyframes glow {
+    0%{background:#e0e0e0;box-shadow:0px 0px 0px #777777, 0px 0px 0px #ffffff;}
+    100%{background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
 }
 
 
