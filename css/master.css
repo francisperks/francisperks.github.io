@@ -59,13 +59,13 @@ body {
 
   75%{color: rgba(0, 0, 0, 0);background: #e0e0e0;box-shadow: 20px 20px 60px #a1a1a1, -20px -20px 60px #ffffff;}
 
-  90%{color: rgba(0, 0, 0, 1);height: 2em;width: 12em;background: #e0e0e0;box-shadow: 20px 20px 60px #a1a1a1, -20px -20px 60px #ffffff;}
+  90%{color: rgba(0, 0, 0, 1);height: 2em;width: 25em;background: #e0e0e0;box-shadow: 20px 20px 60px #a1a1a1, -20px -20px 60px #ffffff;}
 
-  100%{color: rgba(0, 0, 0, 1);width: 12em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
+  100%{color: rgba(0, 0, 0, 1);width: 25em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
  }
 
  @keyframes in{
-   from {color: rgba(0, 0, 0, 1);width: 12em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
+   from {color: rgba(0, 0, 0, 1);width: 25em;height: 15em;background: #e0e0e0;box-shadow:20px 20px 45px #777777, -20px -20px 45px #ffffff;}
    to {background: #e0e0e0;box-shadow:15px 15px 45px #777777, -15px -15px 45px #ffffff;}
  }
 
