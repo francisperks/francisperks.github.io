@@ -39,12 +39,6 @@ hr.rounded {
   box-shadow: 0 30px 40px rgba(0,0,0,.1);
 }
 
-@media screen and (max-width:640px) {
-  .work-info {
-      opacity: 1 !important;
-  }
-}
-
 .navbar-brand{
   color: #fff;
   font-size: 2.25rem;
@@ -422,4 +416,11 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 .social a:hover {
   color: rgba(255, 255, 255, 0.9);
+}
+
+
+@media screen and (max-width:640px) {
+  .work-info {
+      opacity: 1 !important;
+  }
 }
