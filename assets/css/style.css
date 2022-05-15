@@ -12,6 +12,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
+@media screen and (max-width:640px) {
+  .work-info {
+      opacity: 1 !important;
+      visibility: visible !important;
+  }
+  .item .item-wrap:after{
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .item .item-wrap > .work-info{
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 body {
   font-family: "Inconsolata", monospace;
   color: #fb7268;
@@ -419,8 +434,4 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 
-@media screen and (max-width:640px) {
-  .work-info {
-      opacity: 1 !important;
-  }
-}
+
