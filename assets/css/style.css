@@ -1,14 +1,3 @@
-/**
-* Template Name: MyPortfolio - v4.7.0
-* Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
@@ -183,24 +172,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-}
-
-.info-bar{
-  background: #fb7268;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.info-bar h3{
-  font-size: 1.5rem;
-  color:#000;
-  font-family: 'Oswald', sans-serif;
-}
-
-.info-bar span{
-  font-size: 1rem;
-  color:#fff;
-  font-family: 'Oswald', sans-serif;
 }
 
 .item .item-wrap > .work-info div {
@@ -397,13 +368,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     transform: rotate(360deg);
   }
 }
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
 .footer {
   padding: 2rem 4rem 2rem 4rem;
   background: black;
