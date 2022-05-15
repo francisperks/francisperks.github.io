@@ -39,6 +39,12 @@ hr.rounded {
   box-shadow: 0 30px 40px rgba(0,0,0,.1);
 }
 
+@media screen and (max-width:640px) {
+  .work-info {
+      opacity: 1 !important;
+  }
+}
+
 .navbar-brand{
   color: #fff;
   font-size: 2.25rem;
