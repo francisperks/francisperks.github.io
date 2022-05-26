@@ -89,7 +89,7 @@
                 loop controls></video></div>
              
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12 col-lg-5 mb-4 mb-lg-0">
                   <h3 class="text-muted text-center p-3">Description</h3>
                   <p class="project-desc text-white card-text text-justify">Driving inspiration from the "get good"
                     mentality, Syntax Souls
@@ -97,7 +97,7 @@
                     fighting off enemies until you are met by a challenging foe.</p>
 
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-12 col-lg-7 mb-4 mb-lg-0">
                   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -193,7 +193,7 @@
             <p class="dropdown-divider"></p>
             <div class="container">
               <div class="row p-3 justify-content-center">
-                <div class="col-6">
+                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0">
                   <h3 class="text-muted" >Poise</h3>
                   <p class="project-desc" style="color:white">
                     Poise is a hidden stat. It's an in-game statistic that increases your resistance to being staggered as an effect of taking hits from opponents<br>If the actor being attacked reaches 0 poise, they will be staggered. When the player/enemy has been staggered, they will be inable to move or attack.</p>
@@ -202,19 +202,19 @@
                       <source src="../assets/staggering-demo.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                 </div>
-                <div class="col-6">
+                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" style="height:500px;">
                   
                   <!--h5>HealthComponent.cpp</h5-->
 
                   <div class="accordion accordion-flush" id="accordionFlushExample" style="background:rgba(0, 0, 0, 0.1)">
-                    <div class="accordion-item" style="background:rgba(0, 0, 0, 0.1)">
+                    <div class="accordion-item" style="background:rgba(0, 0, 0, 0.1);">
                       <h2 class="accordion-header rounded-3" id="flush-headingOne" >
                         <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background:rgba(255, 255, 255, 0.5)">
                           HealthComponent.cpp | ApplyPoiseDamage
                         </button>
                       </h2>
                       <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body m-0" style="padding-bottom:0;">
+                        <div class="accordion-body m-0" style="padding-bottom:0;height:400px;overflow-y: scroll;">
 <pre style='color:white'><span style='color:#800000; font-weight:bold; '>void</span> UHealthComponent<span style='color:#800080; '>::</span>ApplyPoiseDamage<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>float</span> value<span style='color:#808030; '>)</span>
 <span style='color:#800080; '>{</span>
     <span style='color:#696969; '>// Return if the value is 0 or less</span>
@@ -263,15 +263,136 @@
                       </div>
                     </div>
                   </div>
+                </div>
 
 
+              </div>
+            </div>
 
-                  <div style="height:500px; overflow-y:scroll;" tabindex="0">
-                    <code style="color:white">
+            <div class="container">
+              <div class="row p-3 justify-content-center">
+                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0 order-1">
+                  <h3 class="text-muted">
+                    Target Locking
+                  </h3>
+                  <p class="project-desc" style="color:white;text-align: center;">
+                    Target locking allows the player to lock onto their target, so that their attacks are directed towards the intended enemy. The player is also able to switch between targets within proximty.
+                    <video width="100%" height="auto" controls>
+                      <source src="../assets/syn-souls-targetlock.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                </div>
+                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0 order-12" style="height:500px;">
+                  
+                  <!--h5>HealthComponent.cpp</h5-->
 
-
-                    </code>
-
+                  <div class="accordion accordion-flush" id="accordionTarget" style="background:rgba(0, 0, 0, 0.1);">
+                    <div class="accordion-item" style="background:rgba(0, 0, 0, 0.1)">
+                      <h2 class="accordion-header rounded-3" id="flush-headingThree" >
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseOne" style="background:rgba(255, 255, 255, 0.5)">
+                          PlayerCharacter.cpp | LockTarget
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse show" aria-labelledby="flush-headingThree" data-bs-parent="#accordionTarget">
+                        <div class="accordion-body m-0" style="padding-bottom:0;height:400px;overflow-y: scroll;">
+                          <pre style='color:#fff'><span style='color:#800000; font-weight:bold; '>void</span> APlayerCharacter<span style='color:#800080; '>::</span>LockTarget<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#696969; '>// if target is locked, unlock it</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>targetLocked<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+        targetLocked <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
+        bUseControllerRotationYaw <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>		
+        GetCharacterMovement<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>bOrientRotationToMovement <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+        lockedOnTarget <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>nullptr</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#696969; '>// if target is not locked, lock it</span>
+    <span style='color:#800000; font-weight:bold; '>else</span>
+    <span style='color:#800080; '>{</span>
+        FVector StartLocation <span style='color:#808030; '>=</span> GetActorLocation<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#008000; '>300.</span><span style='color:#006600; '>f</span> <span style='color:#808030; '>*</span> MainCamera<span style='color:#808030; '>-</span><span style='color:#808030; '>></span>GetForwardVector<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        FVector EndLocation <span style='color:#808030; '>=</span> MainCamera<span style='color:#808030; '>-</span><span style='color:#808030; '>></span>GetForwardVector<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> <span style='color:#008000; '>1000.0</span><span style='color:#006600; '>f</span> <span style='color:#808030; '>+</span> StartLocation<span style='color:#800080; '>;</span>
+                            
+        TArray<span style='color:#800080; '>&lt;</span>AActor<span style='color:#808030; '>*</span><span style='color:#800080; '>></span> IgnoredActors<span style='color:#800080; '>;</span>
+        IgnoredActors<span style='color:#808030; '>.</span>Add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        TArray<span style='color:#800080; '>&lt;</span>FHitResult<span style='color:#800080; '>></span> HitArray<span style='color:#800080; '>;</span>
+                                  
+        <span style='color:#800000; font-weight:bold; '>bool</span> bHasHit <span style='color:#808030; '>=</span> UKismetSystemLibrary<span style='color:#800080; '>::</span>SphereTraceMulti<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>,</span> StartLocation<span style='color:#808030; '>,</span> EndLocation<span style='color:#808030; '>,</span> <span style='color:#008000; '>300.</span><span style='color:#006600; '>f</span><span style='color:#808030; '>,</span>
+        UEngineTypes<span style='color:#800080; '>::</span>ConvertToTraceType<span style='color:#808030; '>(</span>ECC_Camera<span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#808030; '>,</span> IgnoredActors<span style='color:#808030; '>,</span> DrawDebugType<span style='color:#808030; '>,</span>
+        HitArray<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>,</span> FLinearColor<span style='color:#800080; '>::</span>Yellow<span style='color:#808030; '>,</span> FLinearColor<span style='color:#800080; '>::</span>Blue<span style='color:#808030; '>,</span> <span style='color:#008000; '>5.0</span><span style='color:#006600; '>f</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                                
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>bHasHit<span style='color:#808030; '>)</span>
+        <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span> FHitResult HitResult <span style='color:#800080; '>:</span> HitArray<span style='color:#808030; '>)</span>
+            <span style='color:#800080; '>{</span>
+                <span style='color:#696969; '>// if hitresult has the Target Component, then we have a target</span>
+                <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>FindComponentByClass<span style='color:#800080; '>&lt;</span>UTargetComponent<span style='color:#800080; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+                <span style='color:#800080; '>{</span>
+                    UHealthComponent<span style='color:#808030; '>*</span> targetHealth <span style='color:#808030; '>=</span> HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>FindComponentByClass<span style='color:#800080; '>&lt;</span>UHealthComponent<span style='color:#800080; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>targetHealth<span style='color:#808030; '>)</span>
+                    <span style='color:#800080; '>{</span>
+                        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>targetHealth<span style='color:#808030; '>-</span><span style='color:#808030; '>></span>GetHealth<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>&lt;</span><span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+                        <span style='color:#800080; '>{</span>
+                            <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
+                        <span style='color:#800080; '>}</span>
+                    <span style='color:#800080; '>}</span>
+                    lockedOnTarget <span style='color:#808030; '>=</span> HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                    targetLocked <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+                    bUseControllerRotationYaw <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+                    GetCharacterMovement<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>bOrientRotationToMovement <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
+                    <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>	
+<span style='color:#800080; '>}</span>
+                            </pre></div>
+                      </div>
+                    </div>
+                    <div class="accordion-item" style="background:rgba(0, 0, 0, 0.1)">
+                      <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseTwo" style="background:rgba(255, 255, 255, 0.5)">
+                          PlayerCharacter.cpp | SwitchTarget
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionTarget">
+                        <div class="accordion-body m-0" style="height:400px;overflow-y: scroll;">
+<pre style='color:#fff'><span style='color:#800000; font-weight:bold; '>void</span> APlayerCharacter<span style='color:#800080; '>::</span>SwitchTarget<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>bool</span> isLeft<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>float</span> Distance<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>float</span> Radius<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>float</span> offset <span style='color:#808030; '>=</span> isLeft <span style='color:#800080; '>?</span> <span style='color:#808030; '>-</span><span style='color:#008000; '>1.0</span><span style='color:#006600; '>f</span> <span style='color:#800080; '>:</span> <span style='color:#008000; '>1.0</span><span style='color:#006600; '>f</span><span style='color:#800080; '>;</span>
+                              
+    FVector playerLeft <span style='color:#808030; '>=</span> GetActorRightVector<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> offset <span style='color:#808030; '>*</span> Distance<span style='color:#800080; '>;</span>
+    FVector targetLocation <span style='color:#808030; '>=</span> lockedOnTarget<span style='color:#808030; '>-</span><span style='color:#808030; '>></span>GetActorLocation<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#808030; '>(</span>Radius <span style='color:#808030; '>*</span> <span style='color:#008000; '>1.1</span><span style='color:#006600; '>f</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> <span style='color:#808030; '>(</span>GetActorRightVector<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> offset<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    TArray<span style='color:#800080; '>&lt;</span>AActor<span style='color:#808030; '>*</span><span style='color:#800080; '>></span> IgnoredActors<span style='color:#800080; '>;</span>
+    IgnoredActors<span style='color:#808030; '>.</span>Add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    IgnoredActors<span style='color:#808030; '>.</span>Add<span style='color:#808030; '>(</span>lockedOnTarget<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    TArray<span style='color:#800080; '>&lt;</span>FHitResult<span style='color:#800080; '>></span> HitArray<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>bool</span> bHasHit <span style='color:#808030; '>=</span> UKismetSystemLibrary<span style='color:#800080; '>::</span>SphereTraceMulti<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>,</span> targetLocation<span style='color:#808030; '>,</span> targetLocation <span style='color:#808030; '>+</span> playerLeft<span style='color:#808030; '>,</span>
+    Radius<span style='color:#808030; '>,</span> UEngineTypes<span style='color:#800080; '>::</span>ConvertToTraceType<span style='color:#808030; '>(</span>ECC_Camera<span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#808030; '>,</span> IgnoredActors<span style='color:#808030; '>,</span> DrawDebugType<span style='color:#808030; '>,</span>
+    HitArray<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>,</span> FLinearColor<span style='color:#800080; '>::</span>Yellow<span style='color:#808030; '>,</span> FLinearColor<span style='color:#800080; '>::</span>Blue<span style='color:#808030; '>,</span> <span style='color:#008000; '>5.0</span><span style='color:#006600; '>f</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>bHasHit<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span> FHitResult HitResult <span style='color:#800080; '>:</span> HitArray<span style='color:#808030; '>)</span>
+        <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>FindComponentByClass<span style='color:#800080; '>&lt;</span>UTargetComponent<span style='color:#800080; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+            <span style='color:#800080; '>{</span>
+                UHealthComponent<span style='color:#808030; '>*</span> targetHealth <span style='color:#808030; '>=</span> HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>FindComponentByClass<span style='color:#800080; '>&lt;</span>UHealthComponent<span style='color:#800080; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>targetHealth<span style='color:#808030; '>)</span>
+                <span style='color:#800080; '>{</span>
+                    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>targetHealth<span style='color:#808030; '>-</span><span style='color:#808030; '>></span>GetHealth<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>&lt;</span><span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+                    <span style='color:#800080; '>{</span>
+                        <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
+                    <span style='color:#800080; '>}</span>
+                <span style='color:#800080; '>}</span>
+                lockedOnTarget <span style='color:#808030; '>=</span> HitResult<span style='color:#808030; '>.</span>GetActor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                targetLocked <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+                bUseControllerRotationYaw <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+                GetCharacterMovement<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span>bOrientRotationToMovement <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
+                <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
